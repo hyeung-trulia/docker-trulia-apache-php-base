@@ -4,6 +4,10 @@ FROM ubuntu
 
 MAINTAINER Hinling Yeung
 
+# Make DEBIAN_FRONTEND less chatty
+ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND newt
+
 # Update the default application repository sources list
 RUN apt-get update
 
