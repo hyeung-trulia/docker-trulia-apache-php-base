@@ -21,7 +21,6 @@ RUN apt-get -y install php-pear
 
 # Install phpmods
 RUN pear upgrade --force pear
-RUN pear install XML_Util
 RUN pecl install stomp-1.0.3
 RUN pecl install APC-3.1.9
 RUN pecl install xdebug
