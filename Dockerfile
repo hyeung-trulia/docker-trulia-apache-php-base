@@ -35,7 +35,7 @@ RUN apt-get -y install apache2-dev apache2-doc
 
 # Install all the php libraries
 RUN apt-get -y install php5-common libapache2-mod-php5 php5-cli
-RUN apt-get -y install php-gd
+#RUN apt-get -y install php-gd
 RUN apt-get -y install php5-mcrypt
 RUN apt-get -y install php5-curl
 RUN apt-get -y install php5-memcache
