@@ -42,5 +42,4 @@ RUN apt-get -y install php5-mcrypt
 RUN apt-get -y install php5-curl
 RUN apt-get -y install libmemcached-dev
 RUN apt-get -y install php5-memcache
-RUN apt-get -y install php5-memcached
-RUN apt-get -y install memcached
+RUN apt-get -y install memcached php5-memcached
