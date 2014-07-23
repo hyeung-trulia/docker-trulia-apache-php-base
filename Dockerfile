@@ -45,3 +45,7 @@ RUN apt-get -y install memcached php5-memcached
 
 # helper tools
 RUN apt-get -y install telnet
+
+# config run levels
+RUN update-rc.d apache2 defaults
+RUN update-rc.d memcached defaults
