@@ -42,3 +42,6 @@ RUN apt-get -y install php5-mcrypt
 RUN apt-get -y install php5-curl
 RUN apt-get -y install libmemcached-dev
 RUN apt-get -y install memcached php5-memcached
+
+# helper tools
+RUN apt-get -y install telnet
