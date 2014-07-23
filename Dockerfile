@@ -25,7 +25,7 @@ RUN apt-get -y install php-pear
 
 # Install phpmods
 RUN pear upgrade --force pear
-RUN printf "no\n" | pecl install stomp-1.0.3
+RUN printf "no\n" | pecl install stomp-1.0.5
 RUN apt-get -y install libpcre3-dev
 RUN apt-get -y install pkg-config
 # RUN pecl install APC -- no APC for php5.5
@@ -42,5 +42,5 @@ RUN apt-get -y install php5-mcrypt
 RUN apt-get -y install php5-curl
 RUN apt-get -y install libmemcached-dev
 RUN apt-get -y install php5-memcache
-RUN apt-get -y install php5-memcached memcached
-
+RUN apt-get -y install php5-memcached
+RUN api-get -y install memcached
