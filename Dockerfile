@@ -43,3 +43,4 @@ RUN apt-get -y install php5-curl
 RUN apt-get -y install libmemcached-dev
 RUN apt-get -y install php5-memcache
 RUN apt-get -y install php5-memcached memcached
+
