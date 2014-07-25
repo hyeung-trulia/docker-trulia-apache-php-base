@@ -1,7 +1,12 @@
 # Trulia apache php base Dockerfile
 To run the docker container, do:
--- docker search hyeung/trulia-apache-php-base
--- docker run -t -i hyeung/trulia-apache-php-base bash
+
+```
+# search for the image
+docker search hyeung/docker-trulia-apache-php-base
+# run the image
+docker run -t -i hyeung/docker-trulia-apache-php-base bash
+```
 
 #### Cheat sheet
 
