@@ -54,3 +54,13 @@ ADD apache_conf/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 # Install Opcache and APCu
 ADD apache_conf/install_opcache_apcu.sh .
 RUN ./install_opcache_apcu.sh
+
+# Create smarty dir
+RUN mkdir -p /data/smarty
+RUN chgrp -R www-data /data/smarty
+RUN chmod -R 770 /data/smarty
+
+# Grant permisson for writing session info
+RUN chgrp -R www-data /var/lib/php5
+RUN chmod -R 770 /var/lib/php5
+ 
