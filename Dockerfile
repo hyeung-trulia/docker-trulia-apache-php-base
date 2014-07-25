@@ -45,3 +45,8 @@ RUN apt-get -y install memcached php5-memcached
 
 # helper tools
 RUN apt-get -y install telnet
+
+# configure apache
+RUN a2enmod rewrite
+ADD apache_conf/apache2.conf /etc/apache2/apache2.conf
+ADD apache_conf/000-default.conf /etc/apache2/sites-enabled/000-default.conf
