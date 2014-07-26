@@ -49,10 +49,10 @@ RUN apt-get -y install telnet
 # configure apache
 ADD apache_conf/apache2.conf /etc/apache2/apache2.conf
 ADD apache_conf/000-default.conf /etc/apache2/sites-enabled/000-default.conf
-ADD apache_conf/start_now.sh /var/www/scripts
+ADD apache_conf/start_now.sh /var/www/scripts/
 
 # Install Opcache and APCu
-ADD apache_conf/install_opcache_apcu.sh /var/www/scripts
+ADD apache_conf/install_opcache_apcu.sh /var/www/scripts/
 
 # ENV changes
 ENV APACHE_RUN_USER www-data
