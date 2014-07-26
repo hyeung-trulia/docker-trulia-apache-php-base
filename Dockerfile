@@ -74,4 +74,5 @@ ENV MEMCACHED_LOG_DIR /var/log/memcached.log
 EXPOSE 80
 EXPOSE 11211
 
-CMD ["/var/www/scripts/start_apache2_memcached.sh"]
+CMD ["apache2", "start", "&& service memcached start"]
+ENTRYPOINT["/usr/sbin/service"]
