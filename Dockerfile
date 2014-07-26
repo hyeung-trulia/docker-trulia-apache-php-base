@@ -75,4 +75,4 @@ EXPOSE 80
 EXPOSE 11211
 
 ENTRYPOINT ["/usr/sbin/apache2"]
-CMD service apache2 start && service memcached start
+CMD start && service memcached start
