@@ -47,22 +47,12 @@ RUN apt-get -y install memcached php5-memcached
 RUN apt-get -y install telnet
 
 # configure apache
-RUN a2enmod rewrite
 ADD apache_conf/apache2.conf /etc/apache2/apache2.conf
 ADD apache_conf/000-default.conf /etc/apache2/sites-enabled/000-default.conf
+ADD apache_conf/start_now.sh /var/www/scripts
 
 # Install Opcache and APCu
-ADD apache_conf/install_opcache_apcu.sh .
-RUN ./install_opcache_apcu.sh
-
-# Create smarty dir
-RUN mkdir -p /data/smarty
-RUN chgrp -R www-data /data/smarty
-RUN chmod -R 770 /data/smarty
-
-# Grant permisson for writing session info
-RUN chgrp -R www-data /var/lib/php5
-RUN chmod -R 770 /var/lib/php5
+ADD apache_conf/install_opcache_apcu.sh /var/www/scripts
 
 # ENV changes
 ENV APACHE_RUN_USER www-data
@@ -74,4 +64,4 @@ ENV MEMCACHED_LOG_DIR /var/log/memcached.log
 EXPOSE 80
 EXPOSE 11211
 
-CMD service apache2 start && service memcached start
+CMD ./var/www/scripts/install_opcache_apcu.sh && ./var/www/scripts/start_now.sh
