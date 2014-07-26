@@ -64,4 +64,4 @@ ENV MEMCACHED_LOG_DIR /var/log/memcached.log
 EXPOSE 80
 EXPOSE 11211
 
-CMD ./var/www/scripts/install_opcache_apcu.sh && ./var/www/scripts/start_now.sh
+CMD ["./var/www/scripts/install_opcache_apcu.sh", "./var/www/scripts/start_now.sh"]
