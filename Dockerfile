@@ -75,4 +75,4 @@ EXPOSE 80
 EXPOSE 11211
 
 CMD ["start", "&& service memcached start"]
-ENTRYPOINT ["/usr/sbin/apache2"]
+ENTRYPOINT ["service apache2"]
