@@ -14,3 +14,23 @@ ln -s /etc/php5/mods-available/opcache.ini /etc/php5/apache2/conf.d/20-opcache.i
 yes '' | pecl install APCu-4.0.6
 echo "extension=apcu.so" > /etc/php5/mods-available/apcu.ini
 ln -s /etc/php5/mods-available/apcu.ini /etc/php5/apache2/conf.d/20-apcu.ini
+
+function up_start {
+	service apache2 stop && service memcached start
+}
+
+function configure_apache {
+	a2enmod rewrite
+
+	# Create smarty dir
+	mkdir -p /data/smarty
+	chgrp -R www-data /data/smarty
+	chmod -R 770 /data/smarty
+
+	# Grant permisson for writing session info
+	chgrp -R www-data /var/lib/php5
+	chmod -R 770 /var/lib/php5
+	up_start
+}
+
+configure_apache
