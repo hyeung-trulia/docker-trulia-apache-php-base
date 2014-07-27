@@ -16,7 +16,7 @@ echo "extension=apcu.so" > /etc/php5/mods-available/apcu.ini
 ln -s /etc/php5/mods-available/apcu.ini /etc/php5/apache2/conf.d/20-apcu.ini
 
 function up_start {
-	service apache2 stop && service memcached start
+	service apache2 start && service memcached start
 }
 
 function configure_apache {
