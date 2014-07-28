@@ -17,6 +17,9 @@ RUN apt-get -y install apache2
 # Install php5
 RUN apt-get -y install php5 libapache2-mod-php5 php5-dev
 
+# Install memcached
+RUN apt-get -y install memcached
+
 # Install mysql client
 RUN apt-get -y install libapache2-mod-auth-mysql php5-mysql mysql-client
 
@@ -40,9 +43,10 @@ RUN apt-get -y install php5-common libapache2-mod-php5 php5-cli
 #RUN apt-get -y install php-gd
 RUN apt-get -y install php5-mcrypt
 RUN apt-get -y install php5-curl
+RUN apt-get -y install memcached
 RUN apt-get -y install libmemcached-dev
 RUN apt-get -y install php5-memcached
-RUN apt-get -y install memcached
+## RUN apt-get -y install memcached
 
 # helper tools
 RUN apt-get -y install telnet
