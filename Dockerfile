@@ -11,6 +11,8 @@ ENV DEBIAN_FRONTEND newt
 # Update the default application repository sources list
 RUN apt-get update
 
+RUN apt-get -y install memcached
+
 # Install apache 2
 RUN apt-get -y install apache2
 
@@ -18,7 +20,7 @@ RUN apt-get -y install apache2
 RUN apt-get -y install php5 libapache2-mod-php5 php5-dev
 
 # Install memcached
-RUN apt-get -y install memcached
+## RUN apt-get -y install memcached
 
 # Install mysql client
 RUN apt-get -y install libapache2-mod-auth-mysql php5-mysql mysql-client
