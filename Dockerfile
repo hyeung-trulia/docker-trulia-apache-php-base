@@ -45,6 +45,7 @@ RUN apt-get -y install memcached php5-memcached
 
 # helper tools
 RUN apt-get -y install telnet
+RUN apt-get -y install wget
 
 # configure apache
 RUN a2enmod rewrite
