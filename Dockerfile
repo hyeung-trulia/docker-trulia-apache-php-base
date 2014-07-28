@@ -6,7 +6,6 @@ MAINTAINER Hinling Yeung
 
 # Make DEBIAN_FRONTEND less chatty
 ENV DEBIAN_FRONTEND noninteractive
-ENV DEBIAN_FRONTEND newt
 
 # Update the default application repository sources list
 RUN apt-get update
@@ -71,4 +70,5 @@ RUN chmod -R 770 /data/smarty
 # Grant permisson for writing session info
 RUN chgrp -R www-data /var/lib/php5
 RUN chmod -R 770 /var/lib/php5
- 
+
+ENV DEBIAN_FRONTEND newt
