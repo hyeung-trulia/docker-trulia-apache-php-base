@@ -10,8 +10,6 @@ ENV DEBIAN_FRONTEND noninteractive
 # Update the default application repository sources list
 RUN apt-get update
 
-RUN apt-get -y install memcached
-
 # Install apache 2
 RUN apt-get -y install apache2
 
@@ -31,7 +29,6 @@ RUN apt-get -y install libpcre3-dev
 RUN apt-get -y install pkg-config
 # RUN pecl install APC -- no APC for php5.5
 RUN pecl install xdebug
-# RUN pecl install memcached
 
 # Install apache libs
 RUN apt-get -y install apache2-dev apache2-doc
@@ -41,16 +38,13 @@ RUN apt-get -y install php5-common libapache2-mod-php5 php5-cli
 #RUN apt-get -y install php-gd
 RUN apt-get -y install php5-mcrypt
 RUN apt-get -y install php5-curl
-RUN apt-get -y install memcached
+# RUN apt-get -y install memcached
 RUN apt-get -y install libmemcached-dev
 RUN apt-get -y install php5-memcached
 
 # helper tools
 RUN apt-get -y install telnet
 RUN apt-get -y install wget
-
-# Install memcached
-RUN apt-get -y install memcached
 
 # configure apache
 RUN a2enmod rewrite
