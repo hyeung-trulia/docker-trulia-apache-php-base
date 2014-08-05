@@ -1,9 +1,0 @@
-[submodule "common"]
-	path = common
-	url = ssh://git@stash.sv2.trulia.com/web/common.git
-[submodule "web"]
-	path = web
-	url = ssh://git@stash.sv2.trulia.com/web/web.git
-[submodule "db_config/dev"]
-	path = db_config/dev
-	url = ssh://git@stash.sv2.trulia.com/web/db_handle.git
