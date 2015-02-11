@@ -53,6 +53,7 @@ RUN apt-get -y install wget
 RUN a2enmod rewrite
 ADD apache_conf/apache2.conf /etc/apache2/apache2.conf
 ADD apache_conf/000-default.conf /etc/apache2/sites-enabled/000-default.conf
+ADD apache_conf/php.ini /etc/php5/apache2/php.ini
 
 # Install Opcache and APCu
 ADD apache_conf/install_opcache_apcu.sh .
