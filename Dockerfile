@@ -35,12 +35,15 @@ RUN apt-get -y install apache2-dev apache2-doc
 
 # Install all the php libraries
 RUN apt-get -y install php5-common libapache2-mod-php5 php5-cli
-#RUN apt-get -y install php-gd
+RUN apt-get -y install php5-gd
 RUN apt-get -y install php5-mcrypt
 RUN apt-get -y install php5-curl
-# RUN apt-get -y install memcached
 RUN apt-get -y install libmemcached-dev
 RUN apt-get -y install php5-memcached
+RUN apt-get -y install imagemagick --fix-missing
+RUN apt-get -y install mcrypt php5-mcrypt
+RUN php5enmod mcrypt
+RUN apt-get -y install php5-xsl 
 
 # helper tools
 RUN apt-get -y install telnet
@@ -55,6 +58,18 @@ ADD apache_conf/php.ini /etc/php5/apache2/php.ini
 # Install Opcache and APCu
 ADD apache_conf/install_opcache_apcu.sh .
 RUN ./install_opcache_apcu.sh
+
+# Install Couchbase
+ADD apache_conf/install_couchbase.sh .
+RUN ./install_couchbase.sh
+
+# Install igbinary
+ADD apache_conf/install_igbinary.sh .
+RUN ./install_igbinary.sh
+
+# Install stomp
+ADD apache_conf/install_stomp.sh .
+RUN ./install_stomp.sh
 
 # Create smarty dir
 RUN mkdir -p /data/smarty
