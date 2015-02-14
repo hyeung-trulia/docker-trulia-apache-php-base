@@ -16,6 +16,9 @@ RUN apt-get -y install apache2
 # Install php5
 RUN apt-get -y install php5 libapache2-mod-php5 php5-dev
 
+# Install xdebug
+RUN apt-get -y install php5-xdebug
+
 # Install mysql client
 RUN apt-get -y install libapache2-mod-auth-mysql php5-mysql mysql-client
 
@@ -55,6 +58,7 @@ ADD apache_conf/apache2.conf /etc/apache2/apache2.conf
 ADD apache_conf/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 ADD apache_conf/php.ini /etc/php5/apache2/php.ini
 ADD apache_conf/mysql_password.so /usr/lib/php5/20121212/mysql_password.so
+ADD apache_conf/20-xdebug.ini /etc/php5/cli/conf.d/20-xdebug.ini
 
 # Install Opcache and APCu
 ADD apache_conf/install_opcache_apcu.sh .
