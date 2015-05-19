@@ -86,4 +86,4 @@ RUN chgrp -R www-data /var/lib/php5
 RUN chmod -R 770 /var/lib/php5
 
 ENV DEBIAN_FRONTEND newt
-ENTRYPOINT ["/usr/sbin/apachectl", "-DFOREGROUND"]
+CMD ["/usr/sbin/apachectl"]
